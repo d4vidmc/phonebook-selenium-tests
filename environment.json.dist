@@ -6,8 +6,8 @@
     }
   },
   "url": {
-    "base": "http://10.28.136.11/public/",
-    "login": "http://10.28.136.11/public/"
+    "base": "http://10.28.136.11:8000/public/",
+    "login": "http://10.28.136.11:8000/public/"
   },
   "tags": " --tags ~@wip",
   "local": {
