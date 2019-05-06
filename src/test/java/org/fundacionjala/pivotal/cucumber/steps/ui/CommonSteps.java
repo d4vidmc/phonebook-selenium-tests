@@ -6,7 +6,9 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import org.fundacionjala.core.Environment;
 import org.fundacionjala.core.ui.driver.DriverManager;
+import org.fundacionjala.core.ui.forms.FormsElements;
 import org.fundacionjala.pivotal.pages.*;
+import org.fundacionjala.util.ScenarioContext;
 import org.fundacionjala.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.asserts.Assertion;
@@ -83,6 +85,8 @@ public class CommonSteps {
 
     @When("creates a new user account as:")
     public void createsANewUserAccountAs(final Map<String, String> formAttributes) {
+        ScenarioContext.getInstance().setContext(FormsElements.NAME.toString(), formAttributes
+                .get(FormsElements.NAME.toString()));
         this.register.registerNewUser(formAttributes);
     }
 }

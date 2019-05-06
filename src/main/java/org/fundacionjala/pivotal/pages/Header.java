@@ -19,7 +19,7 @@ public class Header extends AbstractPage {
     @FindBy(css = ".tc_projects_dropdown_link.tc_context_name")
     private WebElement projecMenu;
 
-    @FindBy(css = ".raw_context_name")
+    @FindBy(css = ".")
     private WebElement titleOnHeader;
 
     @FindBy(css = ".tc_header_project_name")
@@ -96,7 +96,7 @@ public class Header extends AbstractPage {
      * @return title text displayed on header
      */
     public String getTitleName() {
-        this.action.waitPresenceOfElement(By.className("raw_context_name"));
+        this.action.waitPresenceOfElement(By.className(""));
         return this.titleOnHeader.getAttribute("innerHTML");
     }
 

@@ -58,12 +58,12 @@ public class AssertSteps {
      *
      * @param headerTitle String
      */
-    @Then("validates {string} on header title")
+    @Then("validates {string} on header menu")
     public void validatesOnHeaderTitle(final String headerTitle) {
         final String name = ScenarioContext.getContextAsString(headerTitle);
 
         final String actual = this.header.getTitleName();
-        Assert.assertEquals(actual, name, String.format(" %s match on header title", name));
+        Assert.assertEquals(actual, name, String.format(" %s match on header menu", name));
     }
 
     /**
