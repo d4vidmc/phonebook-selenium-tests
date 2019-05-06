@@ -83,33 +83,7 @@ public class ProjectSettings extends AbstractPage {
             action.click(editProjectEnableTask);
         }
     }
-    /**
-     * Set values on form as specified.
-     *
-     * @param projectElements Attributes to set on form
-     */
 
-    public void setValuesOnEditProjectForm(final Map<String, String> projectElements) {
-        final Map<String, ISteps> strategy = new HashMap<>();
-        strategy.put(FormsElements.NAME.toString(),
-                () -> setEditProjectTitle(projectElements
-                        .get(FormsElements.NAME.toString())));
-        strategy.put(FormsElements.DESCRIPTION.toString(),
-                () -> setEditProjectDescription(projectElements
-                        .get(FormsElements.DESCRIPTION.toString())));
-        strategy.put(FormsElements.ACCOUNT.toString(),
-                () -> setEditProjectAccount(projectElements
-                        .get(FormsElements.ACCOUNT.toString())));
-        strategy.put(FormsElements.TASKENABLE.toString(),
-                () -> setEditProjectTaskEnable(projectElements
-                        .get(FormsElements.TASKENABLE.toString())));
-        strategy.put(FormsElements.PRIVACY.toString(),
-                () -> setEditProjectPrivacy(projectElements
-                        .get(FormsElements.PRIVACY.toString())));
-
-        projectElements.keySet()
-                .forEach(key -> strategy.get(key).perform());
-    }
     /**
      * Set value to description field.
      *

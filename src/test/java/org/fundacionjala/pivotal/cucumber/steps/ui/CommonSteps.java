@@ -47,29 +47,6 @@ public class CommonSteps {
                 Environment.getInstance().getValue(passwordKey));
     }
 
-    /**
-     * This method reload page to go dashboard.
-     *
-     * @param tabName name of dashboard tab.
-     **/
-    @Given("goes to dashboard {string}")
-    public void goToDashboardAndTab(final String tabName) {
-        this.dashboard.reload();
-        if (tabName.toLowerCase().contains("workspaces")) {
-            this.dashboard.goToWorkSpaceTab();
-        }
-    }
-
-    /**
-     * Open the project given by name on dashboard page.
-     *
-     * @param projectKeyName is the name of the project
-     */
-    @And("opens a project {string}")
-    public void opensAProject(final String projectKeyName) {
-        final String projectName = StringUtil.getValue(projectKeyName);
-        this.dashboard.goToProject(projectName);
-    }
 
     /**
      * Based on tag annotation enable soft assert.
@@ -106,6 +83,6 @@ public class CommonSteps {
 
     @When("creates a new user account as:")
     public void createsANewUserAccountAs(final Map<String, String> formAttributes) {
-        this.register.
+        this.register.registerNewUser(formAttributes);
     }
 }

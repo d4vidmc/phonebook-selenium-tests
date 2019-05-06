@@ -116,28 +116,7 @@ public class Project extends AbstractPage {
         action.pause(W_TIME);
     }
 
-    /**
-     * Create new project by given name.
-     *
-     * @param projectElements value
-     */
-    public void createNewProject(final Map<String, String> projectElements) {
 
-        final Map<String, ISteps> strategy = new HashMap<>();
-        strategy.put(FormsElements.NAME.toString(),
-                () -> setProjectNameTextField(projectElements
-                        .get(FormsElements.NAME.toString())));
-        strategy.put(FormsElements.ACCOUNT.toString(),
-                () -> selectAccount(projectElements
-                        .get(FormsElements.ACCOUNT.toString())));
-        strategy.put(FormsElements.PRIVACY.toString(),
-                () -> selectProjectPrivacy(projectElements
-                        .get(FormsElements.PRIVACY.toString())));
-
-        projectElements.keySet()
-                .forEach(key -> strategy.get(key).perform());
-        clickCreateButton();
-    }
 
     /**
      * Method to select privacy based on election.

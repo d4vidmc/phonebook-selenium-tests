@@ -15,10 +15,18 @@ package org.fundacionjala.pivotal.pages;
 @Component
 public class Register extends AbstractPage {
     /**
-     * this is a text fiel for the input of a new account name.
+     * this is a text field for the input of a new account name.
      */
-    @FindBy(css = "input[class='tc-account-creator__name']")
+    @FindBy(css = ".btn.btn-primary")
     private WebElement registerButton;
+    @FindBy(css = "input[name='name']")
+    private WebElement usernameField;
+    @FindBy(css = "input[name='email']")
+    private WebElement emailField;
+    @FindBy(css = "input[name='password']")
+    private WebElement passwordField;
+    @FindBy(css = "input[name='password_confirmation']")
+    private WebElement confirmPasswordField;
 
     /**
      * Create new project by given name.
@@ -43,15 +51,16 @@ public class Register extends AbstractPage {
         clickRegisterButton();
     }
     public void clickRegisterButton () {
-            this.action.click();
+            this.action.click(registerButton);
     }
     public void setUserName (final String userName) {
-            this.action.setValue(,userName);
+            this.action.setValue(usernameField,userName);
     }
     public void setEmail (final String email) {
-            this.action.setValue(,email);
+            this.action.setValue(emailField,email);
     }
     public void setPassword (final String password) {
-            this.action.setValue(,password);
+            this.action.setValue(passwordField,password);
+            this.action.setValue(confirmPasswordField,password);
     }
 }
