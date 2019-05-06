@@ -1,19 +1,13 @@
 {
   "credentials": {
-    "owner1": {
-      "username": "",
-      "password": ""
-      "apiToken": ""
-    },
-    "member1": {
+    "user1": {
       "username": "",
       "password": ""
     }
   },
   "url": {
-    "base": "https://www.pivotaltracker.com",
-    "login": "https://www.pivotaltracker.com/signin",
-    "api": "https://www.pivotaltracker.com/services/v5"
+    "base": "http://10.28.136.11/public/",
+    "login": "http://10.28.136.11/public/"
   },
   "tags": " --tags ~@wip",
   "local": {

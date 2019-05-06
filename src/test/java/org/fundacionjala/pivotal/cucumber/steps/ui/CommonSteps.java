@@ -3,15 +3,16 @@ package org.fundacionjala.pivotal.cucumber.steps.ui;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.When;
 import org.fundacionjala.core.Environment;
 import org.fundacionjala.core.ui.driver.DriverManager;
-import org.fundacionjala.pivotal.pages.Dashboard;
-import org.fundacionjala.pivotal.pages.Header;
-import org.fundacionjala.pivotal.pages.Login;
+import org.fundacionjala.pivotal.pages.*;
 import org.fundacionjala.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.asserts.Assertion;
 import org.testng.asserts.SoftAssert;
+
+import java.util.Map;
 
 /**
  * Common steps.
@@ -22,10 +23,10 @@ public class CommonSteps {
     private Login login;
 
     @Autowired
-    private Dashboard dashboard;
+    private Register register;
 
     @Autowired
-    private Header header;
+    private Welcome welcome;
 
     private static Assertion assertion;
 
@@ -71,14 +72,6 @@ public class CommonSteps {
     }
 
     /**
-     * Opens the popover from header title.
-     */
-    @And("opens the popover from header title")
-    public void opensThePopoverFromHeaderTitle() {
-        this.header.openMenu();
-    }
-
-    /**
      * Based on tag annotation enable soft assert.
      */
     @Before("@SoftAssert")
@@ -104,5 +97,15 @@ public class CommonSteps {
         }
 
 
+    }
+
+    @Given("the register form page")
+    public void theRegisterFormPage() {
+        this.welcome.openRegisterForm();
+    }
+
+    @When("creates a new user account as:")
+    public void createsANewUserAccountAs(final Map<String, String> formAttributes) {
+        this.register.
     }
 }

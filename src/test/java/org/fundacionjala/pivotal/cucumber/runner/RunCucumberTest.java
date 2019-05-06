@@ -21,7 +21,7 @@ public class RunCucumberTest extends AbstractTestNGCucumberTests {
     @BeforeTest
     public void open() {
         // Implement.
-        DriverManager.getInstance().getDriver().get(Environment.getInstance().getValue("url.login"));
+        DriverManager.getInstance().getDriver().get(Environment.getInstance().getValue("url.base"));
     }
 
     /** This method close the browser after the features finish. */

@@ -5,16 +5,8 @@ package org.fundacionjala.core.ui.forms;
  */
 public enum FormsElements {
     NAME("name"),
-    DESCRIPTION("description"),
-    ACCOUNT("account"),
-    TASKENABLE("taskenable"),
-    PRIVACY("privacy"),
-    STORY_TYPE("storyType"),
-    ESTIMATED_POINTS("estimatedPoints"),
-    REQUESTER("requester"),
-    OWNER("owners"),
-    BLOCKERS("blockers"),
-    WS_NAME("workspace.name");
+    EMAIL("email"),
+    PASSWORD("password");
 
     private final String element;
 
